@@ -1,0 +1,37 @@
+<app-banner [y]="title"></app-banner>
+<div class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-next-match">
+            <table class="table custom-table">
+              <thead>
+                <tr>
+                  
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Number</th>
+                  <th>Position</th>
+                  
+                 
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let player of playersTeamTab">
+                  
+                  <td>
+                    <strong class="text-white">{{ player.name }}</strong>
+                  </td>
+                  <td>{{ player.age }}</td>
+                  <td>{{ player.number }}</td>
+                  <td>{{ player.position }}</td>
+                  
+                
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

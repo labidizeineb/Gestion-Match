@@ -1,0 +1,118 @@
+<app-banner [y]="btnTitle"></app-banner>
+<div class="site-section">
+    <div class="container">
+      <div class="row">
+      
+        <div class="col-lg-12">
+          <form [formGroup]="StadiumForm">
+            <div class="form-group">
+                
+              <input type="text" formControlName="name" [(ngModel)]="stad.name" class="form-control" placeholder="Name Stadium">
+            </div>
+            <div
+            *ngIf="
+              StadiumForm.controls['name'].invalid &&
+              (StadiumForm.controls['name'].dirty ||
+                StadiumForm.controls['name'].touched)
+            "
+          >
+          <div *ngIf="StadiumForm.controls['name'].errors.required">
+            name is required
+          </div>
+          <div *ngIf="StadiumForm.controls['name'].errors.minlength">
+            name should have at least 4 car
+          </div>
+          </div>
+          <div class="form-group">
+                
+            <input type="text" formControlName="team" [(ngModel)]="stad.team"  class="form-control" placeholder="Team">
+          </div>
+          <div
+          *ngIf="
+            StadiumForm.controls['team'].invalid &&
+            (StadiumForm.controls['team'].dirty ||
+              StadiumForm.controls['team'].touched)
+          "
+        >
+        <div *ngIf="StadiumForm.controls['team'].errors.required">
+          Team is required
+        </div>
+        <div *ngIf="StadiumForm.controls['team'].errors.minlength">
+          Team should have at least 4 car
+        </div>
+        <div *ngIf="StadiumForm.controls['team'].errors.maxlength">
+          Team should have at least max 6 car
+        </div>
+          
+        </div>
+        <div class="form-group">
+                
+            <input type="text" formControlName="country" [(ngModel)]="stad.country"  class="form-control" placeholder="Country">
+          </div>
+          <div
+          *ngIf="
+            StadiumForm.controls['country'].invalid &&
+            (StadiumForm.controls['country'].dirty ||
+              StadiumForm.controls['country'].touched)
+          "
+        >
+        <div *ngIf="StadiumForm.controls['country'].errors.required">
+          Countryis required
+        </div>
+        <div *ngIf="StadiumForm.controls['country'].errors.minlength">
+          country should have at least 3 car
+        </div>
+      </div>
+        <div class="form-group">
+                
+            <input type="text" formControlName="city" [(ngModel)]="stad.city"  class="form-control" placeholder="City">
+          </div>
+          <div
+          *ngIf="
+            StadiumForm.controls['city'].invalid &&
+            (StadiumForm.controls['city'].dirty ||
+              StadiumForm.controls['city'].touched)
+          "
+        >
+        <div *ngIf="StadiumForm.controls['city'].errors.required">
+          City is required
+        </div>
+        <div *ngIf="StadiumForm.controls['city'].errors.minlength">
+          city should have at least 3 car
+        </div>
+
+          
+        </div>
+
+          
+        
+       
+            <div class="form-group">
+                <input type="number" formControlName="capacity" [(ngModel)]="stad.capacity"  class="form-control" placeholder="Capacity">
+              </div>
+                <div
+            *ngIf="
+              StadiumForm.controls['capacity'].invalid &&
+              (StadiumForm.controls['capacity'].dirty ||
+                StadiumForm.controls['capacity'].touched)
+            "
+          >
+          <div *ngIf="StadiumForm.controls['capacity'].errors.required">
+            Capacity is required
+          </div>
+          <div *ngIf="StadiumForm.controls['capacity'].errors.min">
+            capacity should be > 0
+          </div>
+
+            
+          </div>
+            
+            <div class="form-group">
+              <input type="submit" (click)="addOrEditStadium()"  class="btn btn-primary py-3 px-5" [value]="btnTitle">
+            </div>
+          </form>  
+        </div>
+        
+      </div>
+    </div>
+  </div>

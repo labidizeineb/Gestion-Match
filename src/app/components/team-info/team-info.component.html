@@ -1,0 +1,13 @@
+<app-banner [y]="title"></app-banner>
+<div class="custom-media d-flex container" style="margin-top: 5%;">
+    <div class="img mr-4">
+      <img  [src]="findedTeam.logoTeam "  alt="Image" class="img-fluid">
+    </div>
+    <div class="text" style="padding-top: 2%;padding-left: 3%;">
+      
+      <h3 class="mb-4"><a href="#">Team Name : <span class="meta">{{findedTeam.name}}</span></a></h3>
+      <h3 class="mb-4"><a href="#">Owner : <span class="meta">{{findedTeam.owner}}</span></a></h3>
+      <h3 class="mb-4"><a href="#">Foundation :  <span class="meta">{{findedTeam.foundation}}</span></a></h3>
+      <h3 class="mb-4"><a href="#">Stadium : <span class="meta">{{findedTeam.stadium}}</span></a></h3>
+    </div>
+  </div>

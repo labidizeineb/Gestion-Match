@@ -1,0 +1,29 @@
+<app-banner [y]="title"></app-banner>
+<div class="latest-news">
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <div class="post-entry">
+            <a href="#">
+              <img [src]="findedPlayer.imgPlayer" alt="Image" class="img-fluid">
+            </a>
+            <div class="caption">
+              <div class="caption-inner">
+               
+                <div class="author d-flex align-items-center">
+                 
+                  <div class="text">
+                    <h4>Name : <span>{{findedPlayer.name}}</span></h4>
+                    <h4>Age : <span>{{findedPlayer.age}}</span></h4>
+                    <h4>Number : <span>{{findedPlayer.number}}</span></h4>
+                    <h4>Position : <span>{{findedPlayer.position}}</span></h4>
+                    <h4>Team : <span>{{findedPlayer.team}}</span></h4>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<app-banner [y]="title"></app-banner>
+<div class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="widget-next-match">
+            <table class="table custom-table">
+              <thead>
+                <tr>
+                  
+                  <th>Name Stadium</th>
+                  <th>Team</th>
+                  <th>Country</th>
+                  <th>City</th>
+                  <th>Capacity</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let stadium of stadiums">
+                  
+                  <td>
+                    <strong class="text-white">{{ stadium.name }}</strong>
+                  </td>
+                  <td>{{ stadium.team }}</td>
+                  <td>{{ stadium.country }}</td>
+                  <td>{{ stadium.city }}</td>
+                  <td>{{ stadium.capacity }}</td>
+                 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

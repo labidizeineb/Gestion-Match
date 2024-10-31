@@ -1,0 +1,45 @@
+<div class="bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="widget-next-match">
+          <table class="table custom-table">
+            <thead>
+              <tr>
+                
+                <th>Name</th>
+                <th>Fondation</th>
+                <th>Owner</th>
+                <th>Stadium</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let team of teams">
+                
+                <td>
+                  <strong class="text-white">{{ team.name }}</strong>
+                </td>
+                <td>{{ team.foundation }}</td>
+                <td>{{ team.owner }}</td>
+                <td>{{ team.stadium }}</td>
+                <td>
+                  <button class="btn btn-success" (click)="goToDisplay(team._id)">Display Team</button>
+                  <button class="btn btn-success" style="margin-left: 2%" (click)="goToDisplayPlayersTeam(team._id)">
+                    Display Players
+                  </button>
+                  <button class="btn btn-warning" style="margin-left: 2%" (click)="goToDisplayEdit(team._id)">
+                    Edit
+                  </button>
+                  <button class="btn btn-danger" style="margin-left: 2%" (click)="deleteTeam(team._id)">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

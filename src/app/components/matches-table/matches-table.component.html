@@ -1,0 +1,59 @@
+<div class="bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="widget-next-match">
+        <h3 class="text-center">{{title | titlecase}} {{actualDate | date:"dd/MM/yyyy"}}</h3>
+        <form >
+          <div class="form-group" style="margin:30px;">
+            <label for="">Search By Team</label>
+          <input type="text" [(ngModel)]="term" name="term" class="form-control">
+          </div>
+          
+        </form>
+          <table class="table custom-table">
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>TeamOne</th>
+                <th>TeamTwo</th>
+                <th>ScoreOne</th>
+                <th>ScoreTwo</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let match of pageOfItems | myFiltre : term">
+                <td>{{ match._id }}</td>
+                <td>
+                  <strong class="text-white">{{ match.teamOne |  uppercase}}</strong>
+                </td>
+                <td>
+                  <strong class="text-white">{{ match.teamTwo |  uppercase }}</strong>
+                </td>
+                <td>{{ match.scoreOne }}</td>
+                <td>{{ match.scoreTwo }}</td>
+                <td>
+                  <button class="btn btn-success" (click)="goToDisplay(match._id)">Display</button>
+                  <button class="btn btn-warning" style="margin-left: 2%" (click)="goToDisplayEdit(match._id)">
+                    Edit
+                  </button>
+                  <button class="btn btn-danger" style="margin-left: 2%" (click)="deleteMatchById(match._id)">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            
+          </table>
+         
+      </div>
+    </div>
+    
+  </div>
+  </div>
+</div>
+<div class="card-footer pb-0 pt-3 " style="margin-left: 29%;">
+  <jw-pagination
+ [items]="matches" [pageSize]="2" (changePage)="onChangePage($event)"></jw-pagination>
+ </div>
